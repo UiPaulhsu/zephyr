@@ -1,0 +1,8 @@
+
+config INTERNAL_FLASH
+    bool "Internal Flash Module"
+    default y
+
+config INTERNAL_FLASH_LOG_LEVEL
+    int "Log level"
+    default 3
