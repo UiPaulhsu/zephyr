@@ -1,0 +1,4 @@
+#ifdef UBNT_SUPPORT_CLASS_CAMERA2
+
+#endif // #ifdef UBNT_SUPPORT_CLASS_CAMERA2
+

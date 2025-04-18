@@ -13,11 +13,20 @@
 #include <zephyr/sys/printk.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/pwm.h>
+#include <devreg.h>
 
 static const struct pwm_dt_spec pwm_led0 = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
 
+extern int devreg_backend_select(enum devreg_backend_type type);
+
 #define MIN_PERIOD PWM_SEC(1U) / 128U
 #define MAX_PERIOD PWM_SEC(1U)
+
+const struct devreg_api g_devreg_api = {
+	.read = devreg_read,
+	.write = devreg_write,
+	.erase = devreg_erase,
+};
 
 int main(void)
 {
@@ -25,6 +34,8 @@ int main(void)
 	uint32_t period;
 	uint8_t dir = 0U;
 	int ret;
+
+	devreg_init(&g_devreg_api);
 
 	printk("PWM-based blinky\n");
 

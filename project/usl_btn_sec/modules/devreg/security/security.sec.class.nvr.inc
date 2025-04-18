@@ -1,0 +1,3 @@
+#ifdef UBNT_SUPPORT_CLASS_NVR
+#endif // #ifdef UBNT_SUPPORT_CLASS_NVR
+

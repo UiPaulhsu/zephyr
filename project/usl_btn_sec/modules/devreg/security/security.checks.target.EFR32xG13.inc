@@ -1,0 +1,8 @@
+#if SECURITY_IS_TARGET_BUILD && (defined(UBNT_EFR32xG13) || SECURITY_ENABLE_SIMULATION)
+
+#if !SECURITY_ENABLE_INI_SUPPORT
+__FS_FUNCTION_PREFER_INLINE int fs_has_cpu_rev_id_bi(void) { return 0; }
+__FS_FUNCTION_PREFER_INLINE int fs_read_cpu_rev_id_bi(void) { return 0; }
+#endif // #if !SECURITY_ENABLE_INI_SUPPORT
+
+#endif // #if SECURITY_IS_TARGET_BUILD && (defined(UBNT_EFR32xG13) || SECURITY_ENABLE_SIMULATION)
